@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class TimersPage extends StatefulWidget {
   const TimersPage({super.key});
+  static const Icon icon = Icon(Icons.timer);
+  static const String name = 'Timers';
 
   @override
   State<TimersPage> createState() => _TimersPageState();
