@@ -10,7 +10,7 @@ import 'package:quicktimer/blocs/tab_navigation_state.dart';
 
 class QuickTimerApp extends StatelessWidget {
   static final List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
+    FavoritesPage(),
     TimersPage(),
   ];
 
@@ -30,8 +30,8 @@ class QuickTimerApp extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
+                icon: Icon(Icons.star),
+                label: 'Favorites',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.timer),
