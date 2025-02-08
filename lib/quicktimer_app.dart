@@ -1,5 +1,3 @@
-// quick_timer_home_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quicktimer/pages/home_page.dart';
@@ -10,8 +8,8 @@ import 'package:quicktimer/blocs/tab_navigation_state.dart';
 
 class QuickTimerApp extends StatelessWidget {
   static final List<Widget> _widgetOptions = <Widget>[
-    FavoritesPage(),
     TimersPage(),
+    FavoritesPage(),
   ];
 
   const QuickTimerApp({super.key});
@@ -30,12 +28,12 @@ class QuickTimerApp extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.star),
-                label: 'Favorites',
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.timer),
                 label: 'Timers',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.star),
+                label: 'Favorites',
               ),
               // BottomNavigationBarItem(
               //   icon: Icon(Icons.star),
