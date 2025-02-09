@@ -4,7 +4,7 @@ Welcome to QuickTimer! Our app helps you time a variety of activities, from brew
 
 ## What QuickTimer Can Do for You
 
-- **Perfect Coffee Every Time**: Set timers for different brewing methods like Chemex, V20, Espresso Maker, French Press, and Aeropress.
+- **Perfect Coffee Every Time**: Set timers for different brewing methods like Chemex, V20, Espresso Maker, French Press, Aeropress, Tea, MokaPot and Cold Brew.
 - **Cook Pasta to Perfection**: Use our preset timers to cook various types of pasta just right.
 - **Cook Eggs Your Way**: Timers for boiling, poaching, and scrambling eggs.
 - **Stay Focused**: Improve your productivity with Pomodoro, timeboxing, and timeblocking techniques.

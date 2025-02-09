@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'QuickTimer',
-      theme: ThemeData.light(),
+      theme: ThemeData.light().copyWith(
+        iconButtonTheme: IconButtonThemeData(
+          style: IconButton.styleFrom(
+            backgroundColor: Colors.transparent,
+          ),
+        ),
+      ),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       home: MultiBlocProvider(
