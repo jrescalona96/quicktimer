@@ -6,14 +6,14 @@ class TimerItem {
     required this.path,
     required this.category,
     required this.isFavorite,
-    this.imagePath,
+    this.assetImgPath,
     this.tags,
   });
 
   bool isFavorite;
   final String name;
   final String path;
-  final String? imagePath;
+  final String? assetImgPath;
   final TimerCategory category;
   final List<TimerTags>? tags;
 }

@@ -16,10 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'QuickTimer',
       theme: ThemeData.light().copyWith(
+        textTheme: ThemeData.light().textTheme.apply(fontFamily: 'Jersey10'),
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(
-            backgroundColor: Colors.transparent,
-          ),
+              backgroundColor: ColorScheme.of(context).surface.withAlpha(80)),
+        ),
+        cardTheme: CardTheme(
+          elevation: 3,
         ),
       ),
       darkTheme: ThemeData.dark(),

@@ -11,52 +11,55 @@ class TimerItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        print('TODO: Need to implement navigation to ${timer.path}');
-      },
-      child: Stack(
-        children: [
-          Card(
-            margin: const EdgeInsets.all(10),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Image.network(
-                        'https://img.freepik.com/free-vector/coffee-cup-with-heart-outline-flat_78370-7116.jpg?semt=ais_hybrid',
-                        height: 75,
-                        width: 75,
-                      ),
-                    ),
-                    Text(
-                      timer.name,
-                      textAlign: TextAlign.center,
-                    )
-                  ],
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/${timer.assetImgPath}'),
+            fit: BoxFit.cover,
+            opacity: 0.35,
+          ),
+        ),
+        child: InkWell(
+          onTap: () {
+            print('TODO: Need to implement navigation to ${timer.path}');
+          },
+          child: Stack(
+            children: [
+              Positioned(
+                top: 5,
+                right: 5,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    timer.isFavorite
+                        ? Icons.star_rounded
+                        : Icons.star_border_rounded,
+                    color: timer.isFavorite
+                        ? ColorScheme.of(context).primary
+                        : ColorScheme.of(context).tertiary,
+                  ),
                 ),
               ),
-            ),
-          ),
-          Positioned(
-            top: 5,
-            right: 5,
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                timer.isFavorite
-                    ? Icons.star_rounded
-                    : Icons.star_border_rounded,
-                color: timer.isFavorite
-                    ? ColorScheme.of(context).primary
-                    : ColorScheme.of(context).tertiary,
+              // Need Column instead of positio to make ellipsis work
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    timer.name,
+                    textAlign: TextAlign.center,
+                    style: MediaQuery.of(context).size.width > 600
+                        ? TextTheme.of(context).headlineMedium
+                        : TextTheme.of(context).titleLarge,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
               ),
-            ),
-          )
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }
