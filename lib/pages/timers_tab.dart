@@ -1,66 +1,72 @@
 import 'package:flutter/material.dart';
+import 'package:quicktimer/components/page_container.dart';
 import 'package:quicktimer/components/timer_item_tile.dart';
 import 'package:quicktimer/data/enums.dart';
 import 'package:quicktimer/data/models/view/timer_item.dart';
 
-class TimersPage extends StatefulWidget {
-  const TimersPage({super.key});
+class TimersTab extends StatefulWidget {
+  const TimersTab({super.key});
   static const Icon icon = Icon(Icons.timer);
   static const String name = 'Timers';
 
   @override
-  State<TimersPage> createState() => _TimersPageState();
+  State<TimersTab> createState() => _TimersTabState();
 }
 
-class _TimersPageState extends State<TimersPage> {
+class _TimersTabState extends State<TimersTab> {
   final List<TimerItem> timers = [
     TimerItem(
-        name: 'Chemex',
-        category: TimerCategory.drinks,
-        path: 'ChemexPage',
-        tags: [TimerTags.coffee],
-        isFavorite: true,
-        assetImgPath: 'chemex.png'),
+      name: 'Chemex',
+      category: TimerCategory.drinks,
+      path: '/chemex',
+      tags: [TimerTags.coffee],
+      isFavorite: true,
+      assetImgPath: 'chemex.png',
+    ),
     TimerItem(
-        name: 'V20',
-        category: TimerCategory.drinks,
-        path: 'V20Page',
-        tags: [TimerTags.coffee],
-        isFavorite: false,
-        assetImgPath: 'v20.png'),
+      name: 'V20',
+      category: TimerCategory.drinks,
+      path: '/v20',
+      tags: [TimerTags.coffee],
+      isFavorite: false,
+      assetImgPath: 'v20.png',
+    ),
     TimerItem(
-        name: 'Espresso Maker',
-        category: TimerCategory.drinks,
-        path: 'EspressoMakerPage',
-        tags: [TimerTags.coffee],
-        isFavorite: true,
-        assetImgPath: 'espresso.png'),
+      name: 'Espresso Maker',
+      category: TimerCategory.drinks,
+      path: '/espresso-maker',
+      tags: [TimerTags.coffee],
+      isFavorite: true,
+      assetImgPath: 'espresso.png',
+    ),
     TimerItem(
-        name: 'French Press',
-        category: TimerCategory.drinks,
-        path: 'FrenchPressPage',
-        tags: [TimerTags.coffee],
-        isFavorite: false,
-        assetImgPath: 'french_press.png'),
+      name: 'French Press',
+      category: TimerCategory.drinks,
+      path: '/french-press',
+      tags: [TimerTags.coffee],
+      isFavorite: false,
+      assetImgPath: 'french_press.png',
+    ),
     TimerItem(
-        name: 'Aeropress',
-        category: TimerCategory.drinks,
-        path: 'AeropressPage',
-        tags: [TimerTags.coffee],
-        isFavorite: false,
-        assetImgPath: 'aeropress.png'),
+      name: 'Aeropress',
+      category: TimerCategory.drinks,
+      path: '/aeropress',
+      tags: [TimerTags.coffee],
+      isFavorite: false,
+      assetImgPath: 'aeropress.png',
+    ),
     TimerItem(
       name: 'Black Tea',
       category: TimerCategory.drinks,
-      path: 'BlackTeaPage',
+      path: '/black-tea',
       tags: [TimerTags.tea],
       isFavorite: true,
       assetImgPath: 'tea.png',
     ),
     TimerItem(
-      name: 'MokaPot',
+      name: 'Moka Pot',
       category: TimerCategory.drinks,
-      path: 'MokaPotPage',
+      path: '/moka-pot',
       tags: [TimerTags.coffee],
       isFavorite: false,
       assetImgPath: 'moka_pot.png',
@@ -68,7 +74,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Boiling Eggs',
       category: TimerCategory.drinks,
-      path: 'BoilingEggsPage',
+      path: '/boiling-eggs',
       tags: [TimerTags.egg],
       isFavorite: false,
       assetImgPath: 'boil_egg.png',
@@ -76,7 +82,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Poaching Eggs',
       category: TimerCategory.drinks,
-      path: 'PoachingEggsPage',
+      path: '/poaching-eggs',
       tags: [TimerTags.egg],
       isFavorite: true,
       assetImgPath: 'poached_egg.png',
@@ -84,7 +90,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Scrambled Eggs',
       category: TimerCategory.drinks,
-      path: 'ScramblingEggsPage',
+      path: '/scrambled-eggs',
       tags: [TimerTags.egg],
       isFavorite: false,
       assetImgPath: 'scrambled_eggs.png',
@@ -92,7 +98,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Pomodoro',
       category: TimerCategory.productivity,
-      path: 'PomodoroPage',
+      path: '/pomodoro',
       tags: [TimerTags.focus],
       isFavorite: false,
       assetImgPath: 'pomodoro.png',
@@ -100,7 +106,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Time Boxing',
       category: TimerCategory.productivity,
-      path: 'TimeBoxingPage',
+      path: '/time-boxing',
       tags: [TimerTags.focus],
       isFavorite: true,
       assetImgPath: 'timebox.png',
@@ -108,7 +114,7 @@ class _TimersPageState extends State<TimersPage> {
     TimerItem(
       name: 'Time Blocking',
       category: TimerCategory.productivity,
-      path: 'TimeBlockingPage',
+      path: '/time-blocking',
       tags: [TimerTags.focus],
       isFavorite: false,
       assetImgPath: 'timebox.png',
@@ -117,13 +123,13 @@ class _TimersPageState extends State<TimersPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Timers')),
+    return PageContainer(
+      title: TimersTab.name,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: MediaQuery.of(context).size.width > 600 ? 3 : 2,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 250,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quicktimer/data/models/view/timer_item.dart';
+import 'package:quicktimer/utils/platform_utils.dart';
 
 class TimerItemTile extends StatelessWidget {
   const TimerItemTile({
@@ -17,21 +19,21 @@ class TimerItemTile extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/${timer.assetImgPath}'),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             opacity: 0.35,
           ),
         ),
         child: InkWell(
-          onTap: () {
-            print('TODO: Need to implement navigation to ${timer.path}');
-          },
+          onTap: () => context.push(timer.path),
           child: Stack(
             children: [
               Positioned(
-                top: 5,
-                right: 5,
+                top: 2,
+                right: 2,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //TODO(jre): implement
+                  },
                   icon: Icon(
                     timer.isFavorite
                         ? Icons.star_rounded
@@ -43,19 +45,20 @@ class TimerItemTile extends StatelessWidget {
                 ),
               ),
               // Need Column instead of positio to make ellipsis work
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    timer.name,
-                    textAlign: TextAlign.center,
-                    style: MediaQuery.of(context).size.width > 600
-                        ? TextTheme.of(context).headlineMedium
-                        : TextTheme.of(context).titleLarge,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      timer.name,
+                      style: PlatformUtil.isMobile(context)
+                          ? TextTheme.of(context).titleLarge
+                          : TextTheme.of(context).headlineMedium,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
