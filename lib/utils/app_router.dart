@@ -10,7 +10,7 @@ class AppRouter {
     errorBuilder: (_, state) => PageNotFound(),
     routes: [
       GoRoute(
-        path: '/',
+        path: '/nav',
         builder: (_, state) => MultiBlocProvider(
           providers: [
             BlocProvider<TabNavigationBloc>(create: (_) => TabNavigationBloc())
@@ -19,7 +19,7 @@ class AppRouter {
         ),
       ),
       GoRoute(
-        path: ChemexPage.path,
+        path: '/', //ChemexPage.path,
         builder: (_, state) => ChemexPage(),
       ),
     ],

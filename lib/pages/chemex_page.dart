@@ -1,23 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:quicktimer/components/page_container.dart';
+import 'package:quicktimer/components/timer_widget.dart';
+import 'package:quicktimer/utils/platform_utils.dart';
 
-class ChemexPage extends StatefulWidget {
+class ChemexPage extends StatelessWidget {
   const ChemexPage({super.key});
   static const String path = '/chemex';
   final String title = 'Chemex';
 
   @override
-  State<ChemexPage> createState() => _ChemexPageState();
-}
-
-class _ChemexPageState extends State<ChemexPage> {
-  @override
   Widget build(BuildContext context) {
     return PageContainer(
-      title: widget.title,
-      body: Center(
-        child: Text('YOYO'),
-      ),
+      title: title,
+      body: PlatformUtil.isMobile(context)
+          ? SingleChildScrollView(
+              child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      child:
+                          Image.asset('assets/images/chemex.png', width: 300),
+                    ),
+                    TimerWidget(
+                      duration: const Duration(seconds: 45),
+                      modifier: const Duration(seconds: 15),
+                    ),
+                  ],
+                ),
+              ),
+            ))
+          : Center(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.asset('assets/images/chemex.png', width: 300),
+                  ),
+                  TimerWidget(
+                    duration: const Duration(seconds: 45),
+                    modifier: const Duration(seconds: 15),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }
