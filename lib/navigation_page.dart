@@ -6,13 +6,13 @@ import 'package:quicktimer/blocs/tab_navigation_bloc.dart';
 import 'package:quicktimer/blocs/tab_navigation_event.dart';
 import 'package:quicktimer/blocs/tab_navigation_state.dart';
 
-class QuickTimerApp extends StatelessWidget {
+class NavigationPage extends StatelessWidget {
   static final List<Widget> _widgetOptions = <Widget>[
     TimersTab(),
     FavoritesTab(),
   ];
 
-  const QuickTimerApp({super.key});
+  const NavigationPage({super.key});
 
   @override
   Widget build(BuildContext context) {

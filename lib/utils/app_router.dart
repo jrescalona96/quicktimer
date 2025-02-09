@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quicktimer/blocs/tab_navigation_bloc.dart';
 import 'package:quicktimer/pages/chemex_page.dart';
 import 'package:quicktimer/pages/page_not_found.dart';
-import 'package:quicktimer/quicktimer_app.dart';
+import 'package:quicktimer/navigation_page.dart';
 
 class AppRouter {
   final GoRouter _router = GoRouter(
@@ -15,7 +15,7 @@ class AppRouter {
           providers: [
             BlocProvider<TabNavigationBloc>(create: (_) => TabNavigationBloc())
           ],
-          child: QuickTimerApp(),
+          child: NavigationPage(),
         ),
       ),
       GoRoute(
