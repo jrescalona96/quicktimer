@@ -7,7 +7,7 @@ class TimerCompleteDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text('Timer Done'),
-      content: Text('The timer has finished.'),
+      content: Text('The timer has finished!'),
       actions: [
         TextButton(
           onPressed: () {

@@ -3,10 +3,10 @@ import 'package:quicktimer/components/page_container.dart';
 import 'package:quicktimer/components/timer_widget.dart';
 import 'package:quicktimer/utils/platform_utils.dart';
 
-class ChemexPage extends StatelessWidget {
-  const ChemexPage({super.key});
+class Chemex extends StatelessWidget {
+  const Chemex({super.key});
   static const String path = '/chemex';
-  final String title = 'Chemex';
+  static const String title = 'Chemex';
 
   @override
   Widget build(BuildContext context) {

@@ -20,6 +20,10 @@ class MyApp extends StatelessWidget {
           style: IconButton.styleFrom(
               backgroundColor: ColorScheme.of(context).surface.withAlpha(80)),
         ),
+        iconTheme: IconThemeData(
+          size: 15,
+          color: ColorScheme.of(context).primary,
+        ),
         cardTheme: CardTheme(elevation: 3),
       ),
       darkTheme: ThemeData.dark(),

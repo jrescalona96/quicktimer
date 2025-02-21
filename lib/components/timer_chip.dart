@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:quicktimer/data/models/view/timer_item.dart';
 import 'package:quicktimer/utils/platform_utils.dart';
 
-class TimerItemTile extends StatelessWidget {
-  const TimerItemTile({
+class TimerChip extends StatelessWidget {
+  const TimerChip({
     super.key,
     required this.timer,
   });

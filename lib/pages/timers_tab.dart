@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quicktimer/components/page_container.dart';
-import 'package:quicktimer/components/timer_item_tile.dart';
+import 'package:quicktimer/components/timer_chip.dart';
 import 'package:quicktimer/data/enums.dart';
 import 'package:quicktimer/data/models/view/timer_item.dart';
+import 'package:quicktimer/pages/coffee/coffee_page.dart';
 
 class TimersTab extends StatefulWidget {
   const TimersTab({super.key});
@@ -16,20 +17,12 @@ class TimersTab extends StatefulWidget {
 class _TimersTabState extends State<TimersTab> {
   final List<TimerItem> timers = [
     TimerItem(
-      name: 'Chemex',
+      name: CoffeePage.title,
       category: TimerCategory.drinks,
-      path: '/chemex',
+      path: CoffeePage.path,
       tags: [TimerTags.coffee],
       isFavorite: true,
       assetImgPath: 'chemex.png',
-    ),
-    TimerItem(
-      name: 'V20',
-      category: TimerCategory.drinks,
-      path: '/v20',
-      tags: [TimerTags.coffee],
-      isFavorite: false,
-      assetImgPath: 'v20.png',
     ),
     TimerItem(
       name: 'Espresso Maker',
@@ -134,7 +127,7 @@ class _TimersTabState extends State<TimersTab> {
             crossAxisSpacing: 10,
           ),
           itemCount: timers.length,
-          itemBuilder: (_, i) => TimerItemTile(timer: timers[i]),
+          itemBuilder: (_, i) => TimerChip(timer: timers[i]),
         ),
       ),
     );
