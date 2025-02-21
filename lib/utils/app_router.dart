@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quicktimer/blocs/tab_navigation_bloc.dart';
+import 'package:quicktimer/blocs/tab_navigation/tab_navigation_bloc.dart';
 // import 'package:quicktimer/pages/coffee/aeropress_page.dart';
 import 'package:quicktimer/pages/coffee/chemex_page.dart';
 import 'package:quicktimer/pages/coffee/coffee_page.dart';
