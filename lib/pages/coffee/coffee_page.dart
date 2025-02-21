@@ -78,24 +78,14 @@ class _CoffeePageState extends State<CoffeePage> {
       title: CoffeePage.title,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: ListView.builder(
-          itemCount: timers.length,
-          itemBuilder: (_, i) => ListTile(
-            onTap: () {
-              context.push(timers[i].path);
-            },
-            title: Text(timers[i].name),
-            trailing: IconButton(
-              onPressed: () {
-                setState(() {
-                  timers[i].isFavorite = !timers[i].isFavorite;
-                });
-              },
-              icon: Icon(timers[i].isFavorite
-                  ? Icons.star
-                  : Icons.star_border_outlined),
-            ),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 150,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
           ),
+          itemCount: timers.length,
+          itemBuilder: (_, i) => TimerChip(timer: timers[i]),
         ),
       ),
     );

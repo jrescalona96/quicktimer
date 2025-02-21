@@ -10,7 +10,7 @@ import 'package:quicktimer/pages/coffee/coffee_page.dart';
 // import 'package:quicktimer/pages/coffee/french_press_page.dart';
 // import 'package:quicktimer/pages/coffee/moka_pot_page.dart';
 import 'package:quicktimer/pages/page_not_found.dart';
-// import 'package:quicktimer/navigation_page.dart';
+import 'package:quicktimer/navigation_page.dart';
 // import 'package:quicktimer/pages/pasta_page.dart';
 // import 'package:quicktimer/pages/pomodoro_page.dart';
 // import 'package:quicktimer/pages/tea_page.dart';
@@ -27,8 +27,8 @@ class AppRouter {
           providers: [
             BlocProvider<TabNavigationBloc>(create: (_) => TabNavigationBloc())
           ],
-          child: CoffeePage(),
-          // child: NavigationPage(),
+          // child: CoffeePage(),
+          child: NavigationPage(),
         ),
       ),
       GoRoute(
