@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:quicktimer/components/page_container.dart';
 import 'package:quicktimer/components/timer_chip.dart';
 import 'package:quicktimer/data/enums.dart';
